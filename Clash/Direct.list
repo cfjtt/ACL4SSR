@@ -2,6 +2,12 @@
 
 # MyList
 # 域名后缀匹配
+DOMAIN-SUFFIX,pool.ntp.org
+# 防止google play无法下载
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+DOMAIN-SUFFIX,services.googleapis.cn
+DOMAIN-SUFFIX,googleapis.cn
+
 DOMAIN-SUFFIX,time.windows.com
 DOMAIN-SUFFIX,lanzov.com
 DOMAIN-SUFFIX,hao123.com
