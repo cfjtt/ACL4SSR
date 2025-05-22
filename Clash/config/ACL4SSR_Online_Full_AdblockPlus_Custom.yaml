@@ -1,0 +1,1104 @@
+# override.yaml
+proxy-groups:
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - DIRECT
+
+  - name: 🚀 手动切换
+    type: select
+    include-all: true
+
+
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+
+  - name: 🔯 故障转移
+    type: fallback
+    include-all: true
+    interval: 300
+    tolerance: 50
+
+  - name: 🔮 负载均衡
+    type: load-balance
+    include-all: true
+    interval: 300
+    tolerance: 50
+
+  # 地区节点组
+  - name: 🇭🇰 香港节点
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(港|香港|HK|hk|Hong Kong|HongKong|hongkong|hong kong|🇭🇰)"
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|🇯🇵)"
+
+  - name: 🇺🇲 美国节点
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(台|新北|彰化|TW|Taiwan)"
+
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(新加坡|坡|狮城|SG|Singapore)"
+
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(KR|Korea|KOR|首尔|韩|韓)"
+
+  - name: 🌐 其他地区
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(^(?!.*(香港|HK|Hong Kong|🇭🇰|HongKong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|新加坡|坡|狮城|SG|Singapore|台|新北|彰化|TW|Taiwan|KR|Korea|KOR|首尔|韩|韓|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*)"
+
+  - name: 🎥 奈飞节点
+    type: select
+    include-all: true
+    interval: 300
+    tolerance: 50
+    filter: "(NF|奈飞|解锁|Netflix|NETFLIX|Media)"
+
+  # 以下为各服务专用策略组（简化示例，按需补充完整）
+  - name: 🤖 AI
+    type: select
+    proxies:
+      - 🇺🇲 美国节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📺 CCTV
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 📺 EmotnStore
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 💻 GitHub
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🍀 Google
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 💧 Copilot
+    type: select
+    proxies:
+      - 🇺🇲 美国节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: Ⓜ️ 微软云盘OneDrive
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🪟 Microsoft
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 🍎 Apple
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 📲 Telegram
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🦜 Twitter
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📺 Twitch
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📞 Whatsapp
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🚚 AmazonCN
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 🪩 DNS
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 🌥 Cloudflare
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 😆 Facebook
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🛟 Instagram
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📽 Camera360
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 📠 WeChat
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 🎮 GameCN
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: ♻️ Speedtest
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 📹 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🎮 2KGames
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🎮 SteamCN
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 🎥 Netflix
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🎵 TikTok
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📙 GFWlist
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 📺 IPTV海外
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🎞️ 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🌐 其他地区
+      - 🚀 手动切换
+      - 🎯 全球直连
+
+rule-providers:
+  Direct:
+    url: https://raw.githubusercontent.com/cfjtt/ACL4SSR/master/Clash/Direct.list
+    path: ./ruleset/Direct
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyLite:
+    url: https://raw.githubusercontent.com/cfjtt/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./ruleset/ProxyLite
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  AI:
+    url: https://raw.githubusercontent.com/cfjtt/ACL4SSR/refs/heads/master/Clash/AI.list
+    path: ./ruleset/AI
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  LocalAreaNetwork:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  UnBan:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./ruleset/UnBan
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Download:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+    path: ./ruleset/Download
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  CCTV:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/CCTV/CCTV.list
+    path: ./ruleset/CCTV
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  GoogleCN:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./ruleset/GoogleCN
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  SteamCN:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./ruleset/SteamCN
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  GoogleFCM:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleFCM/GoogleFCM.list
+    path: ./ruleset/GoogleFCM
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bilibili:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list
+    path: ./ruleset/Bilibili
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  EmotnStore:
+    url: https://raw.githubusercontent.com/cfjtt/ACL4SSR/refs/heads/master/Clash/Ruleset/EmotnStore.list
+    path: ./ruleset/EmotnStore
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GitHub:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.list
+    path: ./ruleset/GitHub
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Google:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list
+    path: ./ruleset/Google
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bing:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+    path: ./ruleset/Bing
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  OneDrive:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.list
+    path: ./ruleset/OneDrive
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Microsoft:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./ruleset/Microsoft
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Apple:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./ruleset/Apple
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Telegram:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list
+    path: ./ruleset/Telegram
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Twitter:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list
+    path: ./ruleset/Twitter
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Twitch:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitch/Twitch.list
+    path: ./ruleset/Twitch
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Whatsapp:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Whatsapp/Whatsapp.list
+    path: ./ruleset/Whatsapp
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  AmazonCN:
+    url: https://raw.githubusercontent.com/cfjtt/ios_rule_script/refs/heads/master/rule/Clash/AmazonCN/AmazonCN.list
+    path: ./ruleset/AmazonCN
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  DNS:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DNS/DNS.list
+    path: ./ruleset/DNS
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Cloudflare:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.list
+    path: ./ruleset/Cloudflare
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Instagram:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list
+    path: ./ruleset/Instagram
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Facebook:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Facebook/Facebook.list
+    path: ./ruleset/Facebook
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Camera360:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Camera360/Camera360.list
+    path: ./ruleset/Camera360
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  WeChat:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.list
+    path: ./ruleset/WeChat
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  GameDownloadCN:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN.list
+    path: ./ruleset/GameDownloadCN
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Speedtest:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.list
+    path: ./ruleset/Speedtest
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  YouTube:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+    path: ./ruleset/YouTube
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Epic:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+    path: ./ruleset/Epic
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Origin:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+    path: ./ruleset/Origin
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Sony:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+    path: ./ruleset/Sony
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Steam:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list
+    path: ./ruleset/Steam
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Nintendo:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list
+    path: ./ruleset/Nintendo
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  2KGames:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/2KGames/2KGames.list
+    path: ./ruleset/2KGames
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  SteamCN2:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list
+    path: ./ruleset/SteamCN
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  Netflix:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+    path: ./ruleset/Netflix
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  TikTok:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list
+    path: ./ruleset/TikTok
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  ProxyMedia:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./ruleset/ProxyMedia
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  ProxyGFWlist:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+    path: ./ruleset/ProxyGFWlist
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  ChinaDomain:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./ruleset/ChinaDomain
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  IPTVOther:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/IPTVOther/IPTVOther.list
+    path: ./ruleset/IPTVOther
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  ChinaIPV6:
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIpV6.list
+    path: ./ruleset/ChinaIpV6
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+  ChinaMaxNoIP:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP.list
+    path: ./ruleset/ChinaMaxNoIP
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
+
+rules:
+  - "RULE-SET,Direct,🎯 全球直连"
+  - "RULE-SET,ProxyLite,🚀 节点选择"
+  - "RULE-SET,AI,🤖 AI"
+  - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
+  - "RULE-SET,UnBan,🎯 全球直连"
+  - "RULE-SET,Download,🎯 全球直连"
+  - "RULE-SET,CCTV,📺 CCTV"
+  # 其他规则集按相同模式补充...
+  - "RULE-SET,GoogleCN,🎯 全球直连"
+  - "RULE-SET,SteamCN,🎯 全球直连"
+  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,Bilibili,📺 哔哩哔哩"
+  - "RULE-SET,EmotnStore,📺 EmotnStore"
+  - "RULE-SET,GitHub,💻 GitHub"
+  - "RULE-SET,Google,🍀 Google"
+  - "RULE-SET,Bing,💧 Copilot"
+  - "RULE-SET,OneDrive,Ⓜ️ 微软云盘OneDrive"
+  - "RULE-SET,Microsoft,🪟 Microsoft"
+  - "RULE-SET,Apple,🍎 Apple"
+  - "RULE-SET,Telegram,📲 Telegram"
+  - "RULE-SET,Twitter,🦜 Twitter"
+  - "RULE-SET,Twitch,📺 Twitch"
+  - "RULE-SET,Whatsapp,📞 Whatsapp"
+  - "RULE-SET,AmazonCN,🚚 AmazonCN"
+  - "RULE-SET,DNS,🪩 DNS"
+  - "RULE-SET,Cloudflare,🌥 Cloudflare"
+  - "RULE-SET,Instagram,🛟 Instagram"
+  - "RULE-SET,Facebook,😆 Facebook"
+  - "RULE-SET,Camera360,📽 Camera360"
+  - "RULE-SET,WeChat,📠 WeChat"
+  - "RULE-SET,GameDownloadCN,🎮 GameCN"
+  - "RULE-SET,Speedtest,♻️ Speedtest"
+  - "RULE-SET,YouTube,📹 YouTube"
+  - "RULE-SET,Epic,🎮 游戏平台"
+  - "RULE-SET,Origin,🎮 游戏平台"
+  - "RULE-SET,Sony,🎮 游戏平台"
+  - "RULE-SET,Steam,🎮 游戏平台"
+  - "RULE-SET,Nintendo,🎮 游戏平台"
+  - "RULE-SET,2KGames,🎮 2KGames"
+  - "RULE-SET,SteamCN2,🎮 SteamCN"
+  - "RULE-SET,Netflix,🎥 Netflix"
+  - "RULE-SET,TikTok,🎵 TikTok"
+  - "RULE-SET,ProxyMedia,🌍 国外媒体"
+  - "RULE-SET,ProxyGFWlist,📙 GFWlist"
+  - "RULE-SET,ChinaDomain,🎯 全球直连"
+  - "RULE-SET,IPTVOther,📺 IPTV海外"
+  - "RULE-SET,ChinaIPV6,🎯 全球直连"
+  - "RULE-SET,ChinaMaxNoIP,🎞️ 国内媒体"
+  # GeoIP/Geosite 规则
+  - "GEOSITE,CN,🎯 全球直连"
+  - "GEOSITE,geolocation-!cn,🚀 节点选择"
+  - "GEOIP,CN,🎯 全球直连"
+  - "MATCH,🐟 漏网之鱼"
